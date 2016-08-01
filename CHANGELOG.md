@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.3] - 2026-03-18
+
+- Add explicit types to @PublishedApi internal properties for explicitApi compliance
+
 ## [0.1.2] - 2026-03-18
 
 - Fix PublishedApi visibility for inline reified functions in StateMachineBuilder
