@@ -1,9 +1,8 @@
 # state-machine
 
 [![Tests](https://github.com/philiprehberger/kt-state-machine/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-state-machine/actions/workflows/publish.yml)
-[![Maven Central](https://img.shields.io/maven-central/v/com.philiprehberger/state-machine)](https://central.sonatype.com/artifact/com.philiprehberger/state-machine)
-[![License](https://img.shields.io/github/license/philiprehberger/kt-state-machine)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Maven Central](https://img.shields.io/maven-central/v/com.philiprehberger/state-machine.svg)](https://central.sonatype.com/artifact/com.philiprehberger/state-machine)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/kt-state-machine)](https://github.com/philiprehberger/kt-state-machine/commits/main)
 
 Type-safe finite state machine with DSL, transition guards, and side effects.
 
@@ -62,6 +61,24 @@ sm.canSend(Event.Stop) // true
 ./gradlew build
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/kt-state-machine)
+
+🐛 [Report issues](https://github.com/philiprehberger/kt-state-machine/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/kt-state-machine/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
