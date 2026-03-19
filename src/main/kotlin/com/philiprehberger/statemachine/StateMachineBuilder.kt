@@ -10,7 +10,7 @@ public fun <S : Any, E : Any> stateMachine(initial: S, block: StateMachineBuilde
 }
 
 public class StateMachineBuilder<S : Any, E : Any> {
-    @PublishedApi internal val transitions = mutableMapOf<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>>()
+    @PublishedApi internal val transitions: MutableMap<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>> = mutableMapOf()
     @PublishedApi internal var listener: ((S, E, S) -> Unit)? = null
 
     /** Define transitions for a state. */
@@ -25,7 +25,7 @@ public class StateMachineBuilder<S : Any, E : Any> {
 }
 
 public class StateBuilder<S : Any, E : Any, ST : S>(@PublishedApi internal val stateClass: KClass<ST>) {
-    @PublishedApi internal val transitions = mutableMapOf<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>>()
+    @PublishedApi internal val transitions: MutableMap<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>> = mutableMapOf()
 
     /** Define a transition on an event. */
     public inline fun <reified EV : E> on(block: TransitionBuilder<S, E>.() -> Unit) {
