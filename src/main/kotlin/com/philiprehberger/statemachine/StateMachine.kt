@@ -33,7 +33,7 @@ public class StateMachine<S : Any, E : Any> internal constructor(
     }
 }
 
-internal data class TransitionDef<S : Any, E : Any>(
+@PublishedApi internal data class TransitionDef<S : Any, E : Any>(
     val target: S,
     val guard: ((S, E) -> Boolean)?,
     val sideEffect: ((S, E, S) -> Unit)?,

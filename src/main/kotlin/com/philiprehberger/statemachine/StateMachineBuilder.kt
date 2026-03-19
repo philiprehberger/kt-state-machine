@@ -10,8 +10,8 @@ public fun <S : Any, E : Any> stateMachine(initial: S, block: StateMachineBuilde
 }
 
 public class StateMachineBuilder<S : Any, E : Any> {
-    internal val transitions = mutableMapOf<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>>()
-    internal var listener: ((S, E, S) -> Unit)? = null
+    @PublishedApi internal val transitions = mutableMapOf<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>>()
+    @PublishedApi internal var listener: ((S, E, S) -> Unit)? = null
 
     /** Define transitions for a state. */
     public inline fun <reified ST : S> state(block: StateBuilder<S, E, ST>.() -> Unit) {
@@ -24,8 +24,8 @@ public class StateMachineBuilder<S : Any, E : Any> {
     public fun onTransition(block: (S, E, S) -> Unit) { listener = block }
 }
 
-public class StateBuilder<S : Any, E : Any, ST : S>(private val stateClass: KClass<ST>) {
-    internal val transitions = mutableMapOf<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>>()
+public class StateBuilder<S : Any, E : Any, ST : S>(@PublishedApi internal val stateClass: KClass<ST>) {
+    @PublishedApi internal val transitions = mutableMapOf<Pair<KClass<out S>, KClass<out E>>, TransitionDef<S, E>>()
 
     /** Define a transition on an event. */
     public inline fun <reified EV : E> on(block: TransitionBuilder<S, E>.() -> Unit) {
@@ -36,9 +36,9 @@ public class StateBuilder<S : Any, E : Any, ST : S>(private val stateClass: KCla
 }
 
 public class TransitionBuilder<S : Any, E : Any> {
-    internal var target: S? = null
-    internal var guard: ((S, E) -> Boolean)? = null
-    internal var sideEffect: ((S, E, S) -> Unit)? = null
+    @PublishedApi internal var target: S? = null
+    @PublishedApi internal var guard: ((S, E) -> Boolean)? = null
+    @PublishedApi internal var sideEffect: ((S, E, S) -> Unit)? = null
 
     /** Set the target state. */
     public fun transitionTo(state: S) { target = state }
