@@ -1,6 +1,6 @@
 # state-machine
 
-[![CI](https://github.com/philiprehberger/kt-state-machine/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-state-machine/actions/workflows/publish.yml)
+[![Tests](https://github.com/philiprehberger/kt-state-machine/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/kt-state-machine/actions/workflows/publish.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/com.philiprehberger/state-machine)](https://central.sonatype.com/artifact/com.philiprehberger/state-machine)
 [![License](https://img.shields.io/github/license/philiprehberger/kt-state-machine)](LICENSE)
 
@@ -11,9 +11,7 @@ Type-safe finite state machine with DSL, transition guards, and side effects.
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-dependencies {
-    implementation("com.philiprehberger:state-machine:0.1.4")
-}
+implementation("com.philiprehberger:state-machine:0.1.5")
 ```
 
 ### Maven
@@ -22,7 +20,7 @@ dependencies {
 <dependency>
     <groupId>com.philiprehberger</groupId>
     <artifactId>state-machine</artifactId>
-    <version>0.1.4</version>
+    <version>0.1.5</version>
 </dependency>
 ```
 
