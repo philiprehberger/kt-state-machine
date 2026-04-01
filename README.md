@@ -11,7 +11,7 @@ Type-safe finite state machine with DSL, transition guards, and side effects.
 ### Gradle (Kotlin DSL)
 
 ```kotlin
-implementation("com.philiprehberger:state-machine:0.1.5")
+implementation("com.philiprehberger:state-machine:0.2.0")
 ```
 
 ### Maven
@@ -20,7 +20,7 @@ implementation("com.philiprehberger:state-machine:0.1.5")
 <dependency>
     <groupId>com.philiprehberger</groupId>
     <artifactId>state-machine</artifactId>
-    <version>0.1.5</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -41,6 +41,30 @@ sm.send(Event.Start) // currentState = Running
 sm.canSend(Event.Stop) // true
 ```
 
+### Transition History
+
+```kotlin
+sm.send(Event.Start)
+sm.send(Event.Stop)
+
+sm.history().forEach { t ->
+    println("${t.from} --[${t.event}]--> ${t.to}")
+}
+```
+
+### Available Events
+
+```kotlin
+val events = sm.availableEvents()
+// Returns the set of event classes valid for the current state
+```
+
+### Reset
+
+```kotlin
+sm.reset() // Returns to initial state, clears history
+```
+
 ## API
 
 | Function / Class | Description |
@@ -53,6 +77,10 @@ sm.canSend(Event.Stop) // true
 | `StateMachine.send(event)` | Trigger a state transition |
 | `StateMachine.canSend(event)` | Check if transition is valid |
 | `StateMachine.currentState` | Current state |
+| `StateMachine.history()` | Get list of all transitions made |
+| `StateMachine.availableEvents()` | Get valid events for current state |
+| `StateMachine.reset()` | Reset to initial state, clear history |
+| `Transition<S, E>` | Records from, event, to, and timestamp |
 
 ## Development
 

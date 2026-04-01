@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 (2026-03-31)
+
+- Add `history()` to get a chronological list of all transitions made
+- Add `availableEvents()` to get the set of valid events for the current state
+- Add `reset()` to return to the initial state and clear history
+- Add `Transition<S, E>` data class recording from, event, to, and timestamp
+
 ## 0.1.6 (2026-03-31)
 
 - Standardize README to 3-badge format with emoji Support section
